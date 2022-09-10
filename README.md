@@ -1,4 +1,4 @@
-# shenyu-sso
+# shenyu-plugin-auth
 
 
 
@@ -30,9 +30,9 @@ you need change the parameter to your casdoor parameter in shenyu-plugin-auth/ap
 
 ![dependency](static/img/dependency.png)
 
-### Step3.Withelist Configure
+### Step3.Whitelist Configure
 
-You can add the witheList in shenyu-plugin-auth/org/apache/shenyu/plugin/auth/AuthPlugin
+You can add the whiteList in shenyu-plugin-auth/org/apache/shenyu/plugin/auth/AuthPlugin
 
 ![white](static/img/white.png)
 
