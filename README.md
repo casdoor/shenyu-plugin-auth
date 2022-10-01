@@ -1,10 +1,14 @@
-# shenyu-plugin-auth
+---
+title: ShenYu
+description: Using Casdoor in ShenYu
+keywords: [ShenYu]
+---
 
+ShenYu has casdoor plugin to use casdoor
 
+## Step1. Deploy Casdoor
 
-### Step1.Deploy Casdoor
-
-#### Step1.1 Firstly, the Casdoor should be deployed. 
+Firstly, the Casdoor should be deployed. 
 
 You can refer to the Casdoor official documentation for the [Server Installation](/docs/basic/server-installation).
 
@@ -16,23 +20,40 @@ After a successful deployment, you need to ensure:
 
 Then you can quickly implement a casdoor based login page in your own app with the following steps.
 
-#### Step1.2 Configure application.properties
+## Step2. Configure Casdoor application
+#### 1. Create or use an existing Casdoor application.
+#### 2. Add Your redirect url 
+   ![Casdoor Application Setting](static/img/shenyu_config.png)
+#### 3. On the certificate editing page, you can see your `Certificate`.
+   ![Casdoor Certification Setting](static/img/shenyu_cert.png)
 
-you need change the parameter to your casdoor parameter in shenyu-plugin-auth/application.properties.
+## Step3. Use casdoor plugin in shenyu
+### 1. Config casdoor plugin in shenyu
 
+   ![Shenyu Config Plugin](static/img/shenyu_configPlugin.png)
 
+note: because the shenyu only have Single line input box so we need add \n in every line of cert.
+   ![Casdoor Certification Setting](static/img/shenyu_cert2.png)
 
-### Stpe2.Add this plugin to ShenYu.
+You can copy it and paste it on the certificate of shenyu casdoor config.
 
-1. Move shenyu-plugin-auth to shenyu-plugin.
-2. Move shenyu-spring-boot-starter-plugin-auth to shenyu-spring-boot-starter/shenyu-spring-boot-starter-plugin
-3. Add dependency in shenyu-bootstrap/pom.xml
+**You don't need save it in casdoor certificate editing page**,because it just for copying.
 
-![dependency](static/img/dependency.png)
+### 2. Confing shenyu casdoor's plugin
+   ![Shenyu Casdoor](static/img/shenyu_casdoor.png)
+   You can config what you need to use casdoor config
 
-### Step3.Whitelist Configure
+### 3. Get the service and use 
 
-You can add the whiteList in shenyu-plugin-auth/org/apache/shenyu/plugin/auth/AuthPlugin
+   #### 3.1 Visit the Web directly like
+   ![Shenyu Fail Login](static/img/shenyu_faillogin.png)
 
-![white](static/img/white.png)
+   #### 3.2 Use casdoor login like this
+   ![Shenyu Login](static/img/shenyu_login.png)
+   ![Shenyu Success Login](static/img/shenyu_successlogin.png)
+
+   #### 3.3 Carry token in Headers,you also can visit it
+   ![Shenyu token](static/img/shenyu_token.png)
+
+   #### 3.4 It also can save name,id and organization in Headers so that you can use them in next time  
 
